@@ -1,0 +1,12 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__text {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}

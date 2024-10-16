@@ -1,0 +1,13 @@
+.social__list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  gap: 20px;
+  width: 160px;
+}
+
+.social__item {
+  width: 40px;
+  height: 40px;
+}
