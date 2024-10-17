@@ -3,10 +3,19 @@
   align-items: center;
 }
 
+.logo__image {
+  vertical-align: bottom;
+}
+
 .logo__text {
   display: none;
 
   @media (min-width: $desktop-width) {
     display: block;
+    width: 130px;
+    margin: 0;
+    margin-left: 20px;
+    font-size: 12px;
+    line-height: 16px;
   }
 }

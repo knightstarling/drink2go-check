@@ -4,6 +4,67 @@
   font-size: 12px;
   line-height: 16px;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    justify-content: space-between;
+    width: 583px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 885px;
+  }
+}
+
+.main-navigation--closed {
+
+  @media (max-width: calc($tablet-width - 1px)) {
+    & .main-navigation__list {
+      display: none;
+    }
+
+    & .main-navigation__button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      background-color: transparent;
+      background-image: url("../../icons/burger-button.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 16px;
+      border: none;
+    }
+  }
+}
+
+.main-navigation--opened {
+  & .main-navigation__list {
+    @media (max-width: calc($tablet-width - 1px)) {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      left: 0;
+      background-color: $white;
+    }
+  }
+  & .main-navigation__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    background-image: url("../../icons/burger-close-button.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    border: none;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
 }
 
 .main-navigation__list {
@@ -12,18 +73,144 @@
   @media (min-width: $tablet-width) {
     display: flex;
     flex-wrap: wrap;
+    max-width: 410px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+    max-width: 570px;
+  }
+}
+
+.main-navigation__item {
+  text-align: center;
+  border-top: 1px solid $secondary;
+
+  &:last-child {
+    border-bottom: 1px solid $secondary;
+  }
+
+  @media (min-width: $tablet-width) {
+    border: 0;
+
+    &:last-child {
+      border: none;
+    }
   }
 }
 
 .main-navigation__link {
+  position: relative;
   display: inline-block;
-  padding: 32px 23px;
+  padding: 20px 20px;
   color: $black;
   text-decoration: none;
+
+  @media (min-width: $tablet-width) {
+    padding: 32px 22px;
+  }
+}
+
+.main-navigation__link--active {
+  @media (min-width: $tablet-width) {
+    &::after {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: $primary;
+      content: "";
+      z-index: 1;
+
+      @media (min-width: $desktop-width) {
+        bottom: 0;
+      }
+    }
+  }
 }
 
 .main-navigation__user-list {
   @include reset-list;
 
   display: flex;
+  flex-wrap: wrap;
+  margin-right: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-right: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 395px;
+    margin: 0;
+  }
+}
+
+.main-navigation__user-item {
+  @media (min-width: $desktop-width) {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &:nth-last-child(2) {
+      margin: 0;
+    }
+  }
+}
+
+.main-navigation__user-link {
+  display: block;
+  color: $black;
+  text-decoration: none;
+
+  @media (max-width: calc($tablet-width - 1px)) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: calc($desktop-width - 1px)) {
+    width: 60px;
+    height: 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 32px 20px 32px 47px;
+  }
+
+  &--user {
+    background-image: url("../../icons/user.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+
+    @media (min-width: $desktop-width) {
+      background-position: 22px center;
+    }
+  }
+
+  &--cart {
+    background-image: url("../../icons/cart.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+
+    @media (min-width: $desktop-width) {
+      background-position: 22px center;
+    }
+  }
+}
+
+.main-navigation__user-text {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: inline;
+  }
+}
+
+.main-navigation__button {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
 }

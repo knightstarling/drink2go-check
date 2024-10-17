@@ -22,31 +22,35 @@
           <p class="logo__text">Интернет-магазин кофейных напитков</p>
         </div>
 
-        <nav class="header__navigation main-navigation">
+        <nav class="header__navigation main-navigation main-navigation--closed">
           <ul class="main-navigation__list">
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="index.html">Главная</a>
+              <a class="main-navigation__link main-navigation__link--active" href="index.html">Главная</a>
             </li>
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="catalog.html">Каталог</a>
+              <a class="main-navigation__link" href="#">Каталог</a>
             </li>
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="">Доставка</a>
+              <a class="main-navigation__link" href="#">Доставка</a>
             </li>
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="">О нас</a>
+              <a class="main-navigation__link" href="#">О нас</a>
             </li>
           </ul>
 
           <ul class="main-navigation__user-list">
             <li class="main-navigation__user-item">
-              <span class="main-navigation__user-text">Войти</span>
+              <a class="main-navigation__user-link main-navigation__user-link--user" href="#">
+                <span class="main-navigation__user-text">Войти</span>
+              </a>
             </li>
             <li class="main-navigation__user-item">
-              <span class="main-navigation__user-text">Корзина</span>
+              <a class="main-navigation__user-link main-navigation__user-link--cart" href="#">
+                <span class="main-navigation__user-text">Корзина</span>
+              </a>
             </li>
             <li class="main-navigation__user-item">
-              <button class="main-navigation__user-button js-toggle-button" type="button">
+              <button class="main-navigation__button js-toggle-button" type="button">
                 <span class="visually-hidden">Открыть меню</span>
               </button>
             </li>
@@ -59,8 +63,8 @@
       <h1 class="visually-hidden">Drink2Go – интернет-магазин кофейных напитков.</h1>
 
       <section class="hero" data-test="hero">
-        <div class="container">
-          <button class="hero__button-prev"><span class="visually-hidden">Переключить на предыдущий слайд.</span></button>
+        <div class="hero__container container">
+          <button class="hero__button hero__button--prev"><span class="visually-hidden">Переключить на предыдущий слайд.</span></button>
 
           <ul class="hero__list">
             <li class="hero__item">
@@ -76,8 +80,10 @@
                 <strong class="hero__badge">Новинка!</strong>
                 <h2 class="hero__title">Декаф Флэт Уайт</h2>
                 <p class="hero__description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
-                <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                <button class="hero__button-order">Заказать</button>
+                <div class="hero__price-wrapper">
+                  <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
+                  <button class="hero__button-order">Заказать</button>
+                </div>
               </div>
             </li>
             <li class="hero__item">
@@ -92,9 +98,11 @@
               <div class="hero__text">
                 <strong class="hero__badge">Новинка!</strong>
                 <h2 class="hero__title">Лавандовый Латте</h2>
-                <p class="hero__description"></p>
-                <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                <button class="hero__button-order">Заказать</button>
+                <p class="hero__description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор</p>
+                <div class="hero__price-wrapper">
+                  <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
+                  <button class="hero__button-order">Заказать</button>
+                </div>
               </div>
             </li>
             <li class="hero__item">
@@ -109,14 +117,16 @@
               <div class="hero__text">
                 <strong class="hero__badge">Новинка!</strong>
                 <h2 class="hero__title">Тройной Эспрессо</h2>
-                <p class="hero__description"></p>
-                <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                <button class="hero__button-order">Заказать</button>
+                <p class="hero__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость</p>
+                <div class="hero__price-wrapper">
+                  <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
+                  <button class="hero__button-order">Заказать</button>
+                </div>
               </div>
             </li>
           </ul>
 
-          <button class="hero__button-prev"><span class="visually-hidden">Переключить на следующий слайд.</span></button>
+          <button class="hero__button hero__button--next"><span class="visually-hidden">Переключить на следующий слайд.</span></button>
         </div>
       </section>
 
