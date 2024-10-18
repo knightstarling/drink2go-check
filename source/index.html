@@ -22,7 +22,7 @@
           <p class="logo__text">Интернет-магазин кофейных напитков</p>
         </div>
 
-        <nav class="header__navigation main-navigation main-navigation--closed">
+        <nav class="header__navigation main-navigation main-navigation--closed"><!-- Замените main-navigation--closed на main-navigation--opened для открытия меню -->
           <ul class="main-navigation__list">
             <li class="main-navigation__item">
               <a class="main-navigation__link main-navigation__link--active" href="index.html">Главная</a>
@@ -63,8 +63,8 @@
       <h1 class="visually-hidden">Drink2Go – интернет-магазин кофейных напитков.</h1>
 
       <section class="hero" data-test="hero">
-        <div class="hero__container container">
-          <button class="hero__button hero__button--prev"><span class="visually-hidden">Переключить на предыдущий слайд.</span></button>
+        <div class="hero__container">
+          <button class="hero__button hero__button--prev prev"><span class="visually-hidden">Переключить на предыдущий слайд.</span></button>
 
           <ul class="hero__list">
             <li class="hero__item">
@@ -77,12 +77,12 @@
                 <img class="hero__image" src="images/mobile-flat-white@1x.png" srcset="images/mobile-flat-white@2x.png 2x" width="280" height="280" alt="Кофе Декаф Флэт Уайт.">
               </picture>
               <div class="hero__text">
-                <strong class="hero__badge">Новинка!</strong>
+                <strong class="hero__badge badge">Новинка!</strong>
                 <h2 class="hero__title">Декаф Флэт Уайт</h2>
-                <p class="hero__description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
+                <p class="hero__description">Свежесваренный кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком — то, что нужно для&nbsp;расслабления после тяжёлого рабочего дня</p>
                 <div class="hero__price-wrapper">
                   <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                  <button class="hero__button-order">Заказать</button>
+                  <button class="hero__button-order button">Заказать</button>
                 </div>
               </div>
             </li>
@@ -96,12 +96,12 @@
                 <img class="hero__image" src="images/mobile-lavender@1x.png" srcset="images/mobile-lavender@2x.png 2x" width="280" height="280" alt="Кофе Лавайндовый Латте.">
               </picture>
               <div class="hero__text">
-                <strong class="hero__badge">Новинка!</strong>
+                <strong class="hero__badge badge">Новинка!</strong>
                 <h2 class="hero__title">Лавандовый Латте</h2>
                 <p class="hero__description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор</p>
                 <div class="hero__price-wrapper">
                   <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                  <button class="hero__button-order">Заказать</button>
+                  <button class="hero__button-order button">Заказать</button>
                 </div>
               </div>
             </li>
@@ -115,44 +115,49 @@
                 <img class="hero__image" src="images/mobile-espresso@1x.png" srcset="images/mobile-espressor@2x.png 2x" width="280" height="280" alt="Кофе Тройной Эспрессо.">
               </picture>
               <div class="hero__text">
-                <strong class="hero__badge">Новинка!</strong>
+                <strong class="hero__badge badge">Новинка!</strong>
                 <h2 class="hero__title">Тройной Эспрессо</h2>
                 <p class="hero__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость</p>
                 <div class="hero__price-wrapper">
                   <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                  <button class="hero__button-order">Заказать</button>
+                  <button class="hero__button-order button">Заказать</button>
                 </div>
               </div>
             </li>
           </ul>
 
-          <button class="hero__button hero__button--next"><span class="visually-hidden">Переключить на следующий слайд.</span></button>
+          <div class="hero__slide-wrapper">
+            <button class="hero__slide-button hero__slide-button--active active" type="button"><span class="visually-hidden">Первый слайд.</span></button>
+            <button class="hero__slide-button" type="button"><span class="visually-hidden">Второй слайд.</span></button>
+            <button class="hero__slide-button" type="button"><span class="visually-hidden">Третий слайд.</span></button>
+          </div>
+
+          <button class="hero__button hero__button--next next"><span class="visually-hidden">Переключить на следующий слайд.</span></button>
         </div>
       </section>
 
       <section class="features">
-        <div class="container">
-          <strong class="features__badge">Преимущества</strong>
+        <div class="features__container container">
+          <p class="features__badge badge">Преимущества</p>
           <h2 class="features__title">Главные причины выбрать Drink2Go</h2>
 
           <ul class="features__list">
-            <li class="features__item">
+            <li class="features__item features__item--speed">
               <h3 class="features__item-title">Скорость</h3>
               <p class="features__description">Готовый напиток всегда под рукой — просто открой банку</p>
             </li>
-            <li class="features__item">
+            <li class="features__item features__item--fit">
               <h3 class="features__item-title">Удобство</h3>
               <p class="features__description">Легко помещается и в карман,
-                и в маленькую сумочку</p>
+                и&nbsp;в&nbsp;маленькую сумочку</p>
             </li>
-            <li class="features__item">
+            <li class="features__item features__item--energy">
               <h3 class="features__item-title">Бодрость</h3>
               <p class="features__description">Сбалансированная доза кофеина даст мощный заряд энергии</p>
             </li>
-            <li class="features__item">
+            <li class="features__item features__item--eco">
               <h3 class="features__item-title">Экологичность</h3>
-              <p class="features__description">Вся упаковка сделана
-                из перерабатываемых материалов</p>
+              <p class="features__description">Вся упаковка сделана из&nbsp;перерабатываемых материалов</p>
             </li>
           </ul>
         </div>
@@ -160,7 +165,7 @@
 
       <section class="catalog">
         <div class="container">
-          <strong class="catalog__badge">Каталог</strong>
+          <p class="catalog__badge badge">Каталог</p>
           <h2 class="catalog__title">Каталог кофейных напитков</h2>
 
           <form class="catalog__form product-form">

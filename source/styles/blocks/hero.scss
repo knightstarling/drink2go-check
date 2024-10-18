@@ -1,26 +1,100 @@
 .hero {
   background-color: $flat-white;
+
+  @media (min-width: $tablet-width) and (max-width: calc($tablet-width - 1px)) {
+    background-image: linear-gradient($flat-white 640px,$white 640px);
+  }
 }
 
 .hero__container {
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 60px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+  }
 }
 
 .hero__list {
   @include reset-list;
+
+  display: flex;
+}
+
+.hero__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 656px;
+  padding: 20px 20px 60px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) and (max-width: calc($desktop-width - 1px)) {
+    flex-direction: column-reverse;
+    min-width: 768px;
+    padding: 60px 80px 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 188px;
+      background-color: $white;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    min-width: 1440px;
+    padding: 30px 105px 84px;
+    text-align: left;
+  }
+}
+
+.hero__image {
+  position: relative;
+  vertical-align: bottom;
+  z-index: 1;
 }
 
 .hero__text {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+
+  @media (min-width: $tablet-width) {
+    min-height: 272px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    align-items: start;
+    min-height: 293px;
+    margin-top: 12px;
+    margin-left: 30px;
+  }
 }
 
 .hero__badge {
+  margin-top: 10px;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 16px;
   color: $primary;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0;
+  }
 }
 
 .hero__title {
@@ -28,11 +102,31 @@
   margin-bottom: 10px;
   font-size: 36px;
   line-height: 48px;
+  letter-spacing: 0.7px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+    font-size: 56px;
+    line-height: 80px;
+    letter-spacing: 1.1px;
+  }
 }
 
 .hero__description {
   margin: 0;
-  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+.hero__price-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 230px;
+  margin-top: auto;
 }
 
 .hero__price {
@@ -42,9 +136,34 @@
 }
 
 .hero__old-price {
+  margin-right: 5px;
   font-size: 16px;
   font-weight: 400;
   color: $primary;
+}
+
+.hero__slide-wrapper {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    display: flex;
+    gap: 8px;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.hero__slide-button {
+  width: 62px;
+  height: 4px;
+  background-color: $white;
+  border: none;
+
+  &--active {
+    background-color: $primary;
+  }
 }
 
 .hero__button {
@@ -53,6 +172,7 @@
   height: 656px;
   background-color: transparent;
   border: none;
+  z-index: 1;
 
   &--prev {
     top: 0;
@@ -63,11 +183,12 @@
     background-size: 20px;
 
     @media (min-width: $tablet-width) {
-
+      width: 80px;
+      height: 640px;
     }
 
     @media (min-width: $desktop-width) {
-
+      height: 714px;
     }
   }
 
@@ -80,11 +201,12 @@
     background-size: 20px;
 
     @media (min-width: $tablet-width) {
-
+      width: 80px;
+      height: 640px;
     }
 
     @media (min-width: $desktop-width) {
-
+      height: 714px;
     }
   }
 }
