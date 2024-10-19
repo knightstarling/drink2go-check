@@ -8,6 +8,28 @@
 }
 
 .social__item {
+  height: 40px;
+}
+
+.social__link {
+  display: inline-block;
   width: 40px;
   height: 40px;
+  background-color: $grey;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 20px;
+
+  &--vk {
+    mask-image: url("../../icons/vk.svg");
+  }
+
+  &--pinterest {
+    mask-image: url("../../icons/pinterest.svg");
+    mask-size: 22px;
+  }
+
+  &--ok {
+    mask-image: url("../../icons/ok.svg");
+  }
 }

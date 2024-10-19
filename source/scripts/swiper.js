@@ -54,6 +54,7 @@ steps.forEach((step, index) => {
     position = width * index;
     slider.style.transform = `translateX(${-position}px)`;
     stepIndex = index;
+    hero.style.backgroundColor = `${COLORS[stepIndex]}`;
     currentSlide(stepIndex);
   });
 });
