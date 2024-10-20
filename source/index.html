@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preload" href="#" type="font/woff2" as="font">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="vendor/nouislider.min.css">
     <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
@@ -64,7 +65,7 @@
 
       <section class="hero" data-test="hero">
         <div class="hero__container">
-          <button class="hero__button hero__button--prev prev"><span class="visually-hidden">Переключить на предыдущий слайд.</span></button>
+          <button class="hero__button hero__button--prev"><span class="visually-hidden">Переключить на предыдущий слайд.</span></button>
 
           <ul class="hero__list">
             <li class="hero__item">
@@ -132,7 +133,7 @@
             <button class="hero__slide-button" type="button"><span class="visually-hidden">Третий слайд.</span></button>
           </div>
 
-          <button class="hero__button hero__button--next next"><span class="visually-hidden">Переключить на следующий слайд.</span></button>
+          <button class="hero__button hero__button--next"><span class="visually-hidden">Переключить на следующий слайд.</span></button>
         </div>
       </section>
 
@@ -172,17 +173,18 @@
             <form class="catalog__form product-form" action="https://echo.htmlacademy.ru">
               <div class="product-form__fieldset-wrapper">
                 <fieldset class="product-form__fieldset">
-                  <legend class="product-form__title">Цена</legend>
+                  <legend class="product-form__title product-form__title--price">Цена</legend>
 
-                    <div class="product-form__range range">
-                      <div class="range__bar"></div>
-                      <div class="range__input-wrapper">
-                        <label class="visually-hidden" for="input-min"></label>
-                        <input class="range__input range__input--min" id="input-min" type="number">
-                        <label class="visually-hidden" for="input-max"></label>
-                        <input class="range__input range__input--max" id="input-max" type="number">
-                      </div>
+                  <div class="product-form__slider slider">
+                    <div class="slider__bar" id="slider-bar"></div>
+                    <div class="slider__input-wrapper">
+                      <label class="visually-hidden" for="input-min">Минимальная цена.</label>
+                      <input class="slider__input slider__input--min" id="input-min" type="number" placeholder="0" value="">
+                      <div class="slider__input-divider"></div>
+                      <label class="visually-hidden" for="input-max">Максимальная цена.</label>
+                      <input class="slider__input slider__input--max" id="input-max" type="number" placeholder="1040" value="900">
                     </div>
+                  </div>
                 </fieldset>
 
                 <fieldset class="product-form__fieldset product-form__fieldset--milk">
@@ -501,5 +503,6 @@
         </div>
       </div>
     </footer>
+    <script src="vendor/nouislider.min.js"></script>
   </body>
 </html>

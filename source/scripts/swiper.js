@@ -1,16 +1,30 @@
 const hero = document.querySelector('.hero');
 const slider = document.querySelector('.hero__list');
 const slides = slider.querySelectorAll('.hero__item');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.hero__button--prev');
+const nextButton = document.querySelector('.hero__button--next');
 const steps = document.querySelectorAll('.hero__slide-button');
 
-const COLORS = ['#F3EBE1', '#EAE6FC', '#E5E6E8'];
+const TABLET_WIDTH = 768;
+const { width } = slider.getBoundingClientRect();
 
+let Colors;
 let position = 0;
 let stepIndex = 0;
 
-const { width } = slider.getBoundingClientRect();
+const setBackgroundColors = () => {
+  if (width === TABLET_WIDTH) {
+    Colors = [
+      'linear-gradient(to bottom, #F3EBE1 640px, #FFFFFF 640px)',
+      'linear-gradient(to bottom, #EAE6FC 640px, #FFFFFF 640px)',
+      'linear-gradient(to bottom, #E5E6E8 640px, #FFFFFF 640px)',
+    ];
+  } else {
+    Colors = ['#F3EBE1', '#EAE6FC', '#E5E6E8'];
+  }
+};
+
+setBackgroundColors();
 
 const currentSlide = (index) => {
   for (const step of steps) {
@@ -29,7 +43,13 @@ const nextSlide = () => {
   }
 
   slider.style.transform = `translateX(${-position}px)`;
-  hero.style.backgroundColor = `${COLORS[stepIndex]}`;
+
+  if (width === TABLET_WIDTH) {
+    hero.style.backgroundImage = `${Colors[stepIndex]}`;
+  } else {
+    hero.style.backgroundColor = `${Colors[stepIndex]}`;
+  }
+
   currentSlide(stepIndex);
 };
 
@@ -42,7 +62,13 @@ const prevSlide = () => {
   }
 
   slider.style.transform = `translateX(${-position}px)`;
-  hero.style.backgroundColor = `${COLORS[stepIndex]}`;
+
+  if (width === TABLET_WIDTH) {
+    hero.style.backgroundImage = `${Colors[stepIndex]}`;
+  } else {
+    hero.style.backgroundColor = `${Colors[stepIndex]}`;
+  }
+
   currentSlide(stepIndex);
 };
 
@@ -54,7 +80,7 @@ steps.forEach((step, index) => {
     position = width * index;
     slider.style.transform = `translateX(${-position}px)`;
     stepIndex = index;
-    hero.style.backgroundColor = `${COLORS[stepIndex]}`;
+    hero.style.backgroundColor = `${Colors[stepIndex]}`;
     currentSlide(stepIndex);
   });
 });
