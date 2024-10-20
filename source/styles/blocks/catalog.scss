@@ -8,6 +8,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    padding-top: 100px;
     padding-bottom: 119px;
   }
 }
@@ -15,6 +16,10 @@
 .catalog__badge {
   margin-bottom: 5px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 4px;
+  }
 }
 
 .catalog__title {
@@ -25,8 +30,93 @@
   text-align: center;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 21px;
     font-size: 42px;
     line-height: 64px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 37px;
+  }
+}
+
+.catalog__flex-wrapper {
+  @media (min-width: $desktop-width) {
+    display: flex;
+  }
+}
+
+.catalog__sort {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 280px;
+  margin-top: 41px;
+  margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 42px;
+    margin-right: 3px;
+    margin-bottom: 27px;
+    margin-left: auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+    margin-right: 4px;
+    margin-bottom: 25px;
+  }
+}
+
+.catalog__sort-title {
+  margin-top: 0;
+  margin-right: 6px;
+  margin-bottom: 0;
+  margin-left: 2px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.catalog__select {
+  width: 162px;
+  padding: 4px 15px;
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $primary;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+}
+
+.catalog__select:hover,
+.catalog__select:focus-visible {
+  background-color: $secondary;
+}
+
+.catalog__select:active {
+  background-color: transparent;
+}
+
+.catalog__select:active + .catalog__select-arrow {
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+
+.catalog__select-arrow {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    right: 7px;
+    width: 10px;
+    height: 6px;
+    background-image: url("../../icons/select-arrow.svg");
+    background-size: 10px 6px;
   }
 }
 
@@ -45,7 +135,7 @@
 
   @media (min-width: $desktop-width) {
     grid-template-columns: repeat(3, 1fr);
-    width: 1011px;
+    width: 1012px;
   }
 }
 
@@ -92,6 +182,7 @@
   background-color: $white;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 
   @media (max-width: calc($tablet-width - 1px)) {
     background-repeat: no-repeat;

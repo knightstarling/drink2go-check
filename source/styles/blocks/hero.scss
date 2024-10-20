@@ -24,6 +24,7 @@
   @include reset-list;
 
   display: flex;
+  transition: transform 0.8s;
 }
 
 .hero__item {

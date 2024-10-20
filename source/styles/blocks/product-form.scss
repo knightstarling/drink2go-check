@@ -4,6 +4,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .product-form__fieldset {
@@ -37,9 +42,18 @@
 .product-form__label {
   position: relative;
   display: inline-block;
-  padding-left: 34px;
   font-size: 16px;
   line-height: 24px;
+}
+
+.product-form__text {
+  &--radio {
+    padding-left: 34px;
+  }
+
+  &--checkbox {
+    padding-left: 52px;
+  }
 }
 
 .product-form__custom-radio {
@@ -58,8 +72,8 @@
   &::before {
     content: "";
     position: absolute;
-    top: 9%;
-    left: 10%;
+    top: 2px;
+    left: 2px;
     width: 16px;
     height: 16px;
     background-color: $primary;
@@ -67,8 +81,8 @@
   }
 }
 
-.product-form__radio:hover + .product-form__custom-radio,
-.product-form__radio:focus-visible + .product-form__custom-radio {
+.product-form__radio:hover:enabled + .product-form__custom-radio,
+.product-form__radio:focus-visible:enabled + .product-form__custom-radio {
   border-color: $primary-lighter;
 
   &::before {
@@ -77,6 +91,7 @@
 }
 
 .product-form__radio:disabled + .product-form__custom-radio {
+  background-color: $lightest-grey;
   border-color: $light-grey;
 
   &::before {
@@ -88,14 +103,78 @@
   color: $grey;
 }
 
+.product-form__custom-checkbox {
+  position: absolute;
+  left: 0;
+  width: 42px;
+  height: 24px;
+  background-color: $grey;
+  border: 2px solid $grey;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border-radius: 50%;
+    transition: left 0.3s;
+  }
+}
+
+.product-form__checkbox:checked + .product-form__custom-checkbox {
+  background-color: $primary;
+  border: 2px solid $primary;
+
+  &::before {
+    top: 0;
+    left: 18px;
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border-radius: 50%;
+  }
+}
+
+.product-form__checkbox:hover:enabled + .product-form__custom-checkbox,
+.product-form__checkbox:focus-visible:enabled + .product-form__custom-checkbox {
+  background-color: rgba(120, 89, 207, 0.25);
+  border-color: $primary-lighter;
+}
+
+.product-form__checkbox:disabled + .product-form__custom-checkbox {
+  background-color: $light-grey;
+  border-color: $light-grey;
+
+  &::before {
+    background-color: $lightest-grey;
+  }
+}
+
+.product-form__checkbox:disabled:checked + .product-form__custom-checkbox {
+  &::before {
+    background-color: $grey;
+  }
+}
+
+.product-form__checkbox:disabled ~ .product-form__text {
+  color: $grey;
+}
+
 .product-form__button-wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: 29px;
 
   @media (min-width: $tablet-width) {
     flex-direction: row;
     justify-content: center;
+    margin-top: 39px;
   }
 }
 

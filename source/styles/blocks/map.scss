@@ -3,6 +3,7 @@
 }
 
 .map img {
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  vertical-align: bottom;
+  object-fit: cover;
 }
