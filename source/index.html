@@ -185,10 +185,10 @@
                     <div class="slider__bar"></div>
                     <div class="slider__input-wrapper">
                       <label class="visually-hidden" for="input-min">Минимальная цена.</label>
-                      <input class="slider__input slider__input--min" type="number" name="min-price" placeholder="0">
+                      <input class="slider__input slider__input--min" id="input-min" type="number" name="min-price" placeholder="0">
                       <div class="slider__input-divider"></div>
                       <label class="visually-hidden" for="input-max">Максимальная цена.</label>
-                      <input class="slider__input slider__input--max" type="number" name="max-price" placeholder="1040" value="900">
+                      <input class="slider__input slider__input--max" id="input-max" type="number" name="max-price" placeholder="1040" value="900">
                     </div>
                   </div>
                 </fieldset>
@@ -396,7 +396,7 @@
           </div>
 
           <div class="catalog__pagination-wrapper">
-            <button class="catalog__pagination-button catalog__pagination-button--prev" type="button"><span class="catalot__pagination-button-text">Назад</span></button>
+            <button class="catalog__pagination-button catalog__pagination-button--prev" type="button"><span class="catalog__pagination-button-text">Назад</span></button>
             <ul class="catalog__pagination-list">
               <li class="catalog__pagination-item">
                 <button class="catalog__pagination-page-button" type="button">1</button>
@@ -408,7 +408,7 @@
                 <button class="catalog__pagination-page-button" type="button">3</button>
               </li>
             </ul>
-            <button class="catalog__pagination-button catalog__pagination-button--next" type="button"><span class="catalot__pagination-button-text">Вперёд</span></button>
+            <button class="catalog__pagination-button catalog__pagination-button--next" type="button"><span class="catalog__pagination-button-text">Вперёд</span></button>
           </div>
         </div>
       </section>
