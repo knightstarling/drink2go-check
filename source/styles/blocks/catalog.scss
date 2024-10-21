@@ -62,10 +62,7 @@
   margin-bottom: 15px;
 
   @media (min-width: $tablet-width) {
-    margin-top: 41px;
-    margin-right: 4px;
-    margin-bottom: 25px;
-    margin-left: auto;
+    margin: 41px 4px 25px auto;
   }
 
   @media (min-width: $desktop-width) {
@@ -74,10 +71,7 @@
 }
 
 .catalog__sort-title {
-  margin-top: 0;
-  margin-right: 6px;
-  margin-bottom: 0;
-  margin-left: 2px;
+  margin: 0 6px 0 2px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
@@ -177,6 +171,7 @@
 }
 
 .catalog__pagination-button {
+  position: relative;
   min-width: 40px;
   height: 40px;
   padding: 8px;
@@ -189,22 +184,68 @@
   border-radius: 4px;
   cursor: pointer;
 
-  @media (max-width: calc($tablet-width - 1px)) {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 10px 10px;
+  &:hover,
+  &:focus-visible {
+    color: $white;
+    background-color: $primary-lighter;
 
-    &--prev {
-      background-image: url("../../icons/arrow-left.svg");
+    &::after {
+      background-color: $white;
     }
+  }
 
-    &--next {
-      background-image: url("../../icons/arrow-right.svg");
+  &:active {
+    color: $white;
+    background-color: $primary-darker;
+
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &:disabled {
+    color: $white;
+    background-color: $light-grey;
+
+    &::after {
+      background-color: $white;
     }
   }
 
   @media (min-width: $tablet-width) {
     padding: 8px 20px;
+  }
+}
+
+.catalog__pagination-button--prev::after {
+  @media (max-width: calc($tablet-width - 1px)) {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    background-color: $primary;
+    mask-image: url("../../icons/arrow-left.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 10px 10px;
+  }
+}
+
+.catalog__pagination-button--next::after {
+  @media (max-width: calc($tablet-width - 1px)) {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    background-color: $primary;
+    mask-image: url("../../icons/arrow-right.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 10px 10px;
   }
 }
 
@@ -214,18 +255,37 @@
   }
 }
 
-.catalog__pagination-link {
+.catalog__pagination-page-button {
   display: inline-block;
   width: 40px;
   height: 40px;
   padding: 8px;
+  font-family: $primary-font;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
   text-decoration: none;
   color: $primary;
   background-color: $white;
+  border: none;
   border-radius: 4px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: $white;
+    background-color: $primary-lighter;
+  }
+
+  &:active {
+    color: $white;
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    color: $white;
+    background-color: $light-grey;
+  }
 
   &--current {
     font-weight: 600;

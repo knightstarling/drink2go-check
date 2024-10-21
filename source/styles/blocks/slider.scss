@@ -47,12 +47,12 @@
 .noUi-handle.noUi-handle-lower:hover .noUi-touch-area,
 .noUi-handle.noUi-handle-upper:focus-visible .noUi-touch-area,
 .noUi-handle.noUi-handle-lower:focus-visible .noUi-touch-area {
-    outline: none;
-    margin: 2px auto;
-    width: 16px;
-    height: 16px;
-    background-color: rgba(120, 89, 207, 0.25);
-    border-radius: 50%;
+  outline: none;
+  margin: 2px auto;
+  width: 16px;
+  height: 16px;
+  background-color: $primary-opacity;
+  border-radius: 50%;
 }
 
 .noUi-handle.noUi-handle-upper:active,
@@ -130,6 +130,10 @@
 
 .slider__input::-webkit-inner-spin-button {
   appearance: none;
+}
+
+.slider__input {
+  -moz-appearance: textfield;
 }
 
 .slider__input-divider {

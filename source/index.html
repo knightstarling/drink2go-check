@@ -5,6 +5,10 @@
     <title>Drink2Go</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preload" href="#" type="font/woff2" as="font">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/favicon-180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicons/favicon-192.png">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="vendor/nouislider.min.css">
     <script src="scripts/index.js" defer></script>
@@ -67,7 +71,7 @@
 
       <section class="hero" data-test="hero">
         <div class="hero__container">
-          <button class="hero__button hero__button--prev"><span class="visually-hidden">Переключить на предыдущий слайд.</span></button>
+          <button class="hero__button hero__button--prev" type="button"><span class="visually-hidden">Переключить на предыдущий слайд.</span></button>
 
           <ul class="hero__list">
             <li class="hero__item">
@@ -85,7 +89,7 @@
                 <p class="hero__description">Свежесваренный кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком — то, что нужно для&nbsp;расслабления после тяжёлого рабочего дня</p>
                 <div class="hero__price-wrapper">
                   <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                  <button class="hero__button-order button">Заказать</button>
+                  <button class="hero__button-order button" type="button">Заказать</button>
                 </div>
               </div>
             </li>
@@ -104,7 +108,7 @@
                 <p class="hero__description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор</p>
                 <div class="hero__price-wrapper">
                   <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                  <button class="hero__button-order button">Заказать</button>
+                  <button class="hero__button-order button" type="button">Заказать</button>
                 </div>
               </div>
             </li>
@@ -123,7 +127,7 @@
                 <p class="hero__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость</p>
                 <div class="hero__price-wrapper">
                   <span class="hero__price"><del class="hero__old-price">295₽</del>225₽</span>
-                  <button class="hero__button-order button">Заказать</button>
+                  <button class="hero__button-order button" type="button">Заказать</button>
                 </div>
               </div>
             </li>
@@ -135,7 +139,7 @@
             <button class="hero__slide-button" type="button"><span class="visually-hidden">Третий слайд.</span></button>
           </div>
 
-          <button class="hero__button hero__button--next"><span class="visually-hidden">Переключить на следующий слайд.</span></button>
+          <button class="hero__button hero__button--next" type="button"><span class="visually-hidden">Переключить на следующий слайд.</span></button>
         </div>
       </section>
 
@@ -178,13 +182,13 @@
                   <legend class="product-form__title product-form__title--price">Цена</legend>
 
                   <div class="product-form__slider slider">
-                    <div class="slider__bar" id="slider-bar"></div>
+                    <div class="slider__bar"></div>
                     <div class="slider__input-wrapper">
                       <label class="visually-hidden" for="input-min">Минимальная цена.</label>
-                      <input class="slider__input slider__input--min" id="input-min" type="number" placeholder="0" value="">
+                      <input class="slider__input slider__input--min" type="number" name="min-price" placeholder="0">
                       <div class="slider__input-divider"></div>
                       <label class="visually-hidden" for="input-max">Максимальная цена.</label>
-                      <input class="slider__input slider__input--max" id="input-max" type="number" placeholder="1040" value="900">
+                      <input class="slider__input slider__input--max" type="number" name="max-price" placeholder="1040" value="900">
                     </div>
                   </div>
                 </fieldset>
@@ -229,35 +233,35 @@
 
                   <ul class="product-form__list">
                     <li class="product-form__item">
-                      <label class="product-form__label product-form--checkbox">
+                      <label class="product-form__label">
                         <input class="product-form__checkbox visually-hidden" type="checkbox" name="brasil" checked>
                         <span class="product-form__custom-checkbox"></span>
                         <span class="product-form__text product-form__text--checkbox">Бразилия</span>
                       </label>
                     </li>
                     <li class="product-form__item">
-                      <label class="product-form__label product-form--checkbox">
+                      <label class="product-form__label">
                         <input class="product-form__checkbox visually-hidden" type="checkbox" name="ethiopia">
                         <span class="product-form__custom-checkbox"></span>
                         <span class="product-form__text product-form__text--checkbox">Эфиопия</span>
                       </label>
                     </li>
                     <li class="product-form__item">
-                      <label class="product-form__label product-form--checkbox">
+                      <label class="product-form__label">
                         <input class="product-form__checkbox visually-hidden" type="checkbox" name="colombia">
                         <span class="product-form__custom-checkbox"></span>
                         <span class="product-form__text product-form__text--checkbox">Колумбия</span>
                       </label>
                     </li>
                     <li class="product-form__item">
-                      <label class="product-form__label product-form--checkbox">
+                      <label class="product-form__label">
                         <input class="product-form__checkbox visually-hidden" type="checkbox" name="costa-rica">
                         <span class="product-form__custom-checkbox"></span>
                         <span class="product-form__text product-form__text--checkbox">Коста-Рика</span>
                       </label>
                     </li>
                     <li class="product-form__item">
-                      <label class="product-form__label product-form--checkbox">
+                      <label class="product-form__label">
                         <input class="product-form__checkbox visually-hidden" type="checkbox" name="peru" disabled>
                         <span class="product-form__custom-checkbox"></span>
                         <span class="product-form__text product-form__text--checkbox">Перу</span>
@@ -392,19 +396,19 @@
           </div>
 
           <div class="catalog__pagination-wrapper">
-            <button class="catalog__pagination-button catalog__pagination-button--prev"><span class="catalot__pagination-button-text">Назад</span></button>
+            <button class="catalog__pagination-button catalog__pagination-button--prev" type="button"><span class="catalot__pagination-button-text">Назад</span></button>
             <ul class="catalog__pagination-list">
               <li class="catalog__pagination-item">
-                <a class="catalog__pagination-link" href="#">1</a>
+                <button class="catalog__pagination-page-button" type="button">1</button>
               </li>
               <li class="catalog__pagination-item">
-                <a class="catalog__pagination-link catalog__pagination-link--current" href="#">2</a>
+                <button class="catalog__pagination-page-button catalog__pagination-page-button--current" type="button">2</button>
               </li>
               <li class="catalog__pagination-item">
-                <a class="catalog__pagination-link" href="#">3</a>
+                <button class="catalog__pagination-page-button" type="button">3</button>
               </li>
             </ul>
-            <button class="catalog__pagination-button catalog__pagination-button--next"><span class="catalot__pagination-button-text">Вперёд</span></button>
+            <button class="catalog__pagination-button catalog__pagination-button--next" type="button"><span class="catalot__pagination-button-text">Вперёд</span></button>
           </div>
         </div>
       </section>
@@ -499,7 +503,7 @@
         </div>
 
         <div class="footer__copyright">
-          <p class="footer__copyright-text" href="https://htmlacademy.ru/intensive/adaptive">
+          <p class="footer__copyright-text">
             Разработано в <a class="footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
           </p>
         </div>

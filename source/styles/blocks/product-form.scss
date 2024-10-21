@@ -8,6 +8,7 @@
   @media (min-width: $desktop-width) {
     display: flex;
     flex-direction: column;
+    margin-top: 2px;
   }
 }
 
@@ -94,7 +95,7 @@
   border-color: $primary-lighter;
 
   &::before {
-    background-color: rgba(120, 89, 207, 0.25);
+    background-color: $primary-opacity;
   }
 }
 
@@ -150,7 +151,7 @@
 
 .product-form__checkbox:hover:enabled + .product-form__custom-checkbox,
 .product-form__checkbox:focus-visible:enabled + .product-form__custom-checkbox {
-  background-color: rgba(120, 89, 207, 0.25);
+  background-color: $primary-opacity;
   border-color: $primary-lighter;
 }
 
