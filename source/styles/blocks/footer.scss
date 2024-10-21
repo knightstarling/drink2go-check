@@ -138,6 +138,15 @@
   color: $black;
   text-decoration: none;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus-visible {
+    color: $primary-lighter;
+  }
+
+  &:active {
+    color: $primary-darker;
+  }
 }
 
 .footer__address {
@@ -185,6 +194,23 @@
   padding-right: 16px;
   color: $grey;
   text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: $primary;
+
+    &::after {
+      background-color: $primary;
+    }
+  }
+
+  &:active {
+    color: $primary-darker;
+
+    &::after {
+      background-color: $primary-darker;
+    }
+  }
 
   &::after {
     content: "";

@@ -43,6 +43,27 @@
   }
 }
 
+.noUi-handle.noUi-handle-upper:hover .noUi-touch-area,
+.noUi-handle.noUi-handle-lower:hover .noUi-touch-area,
+.noUi-handle.noUi-handle-upper:focus-visible .noUi-touch-area,
+.noUi-handle.noUi-handle-lower:focus-visible .noUi-touch-area {
+    outline: none;
+    margin: 2px auto;
+    width: 16px;
+    height: 16px;
+    background-color: rgba(120, 89, 207, 0.25);
+    border-radius: 50%;
+}
+
+.noUi-handle.noUi-handle-upper:active,
+.noUi-handle.noUi-handle-lower:active {
+  border-color: $primary;
+}
+.noUi-handle.noUi-handle-upper:active .noUi-touch-area,
+.noUi-handle.noUi-handle-lower:active .noUi-touch-area {
+  background-color: $primary;
+}
+
 .slider__bar .noui-slider.noui-slider-disabled {
   pointer-events: none;
 
@@ -83,6 +104,16 @@
   background-color: $white;
   border: 2px solid $primary-lighter;
   border-radius: 4px;
+
+  &:focus-visible {
+    outline: none;
+    border-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $lightest-grey;
+    border-color: $light-grey;
+  }
 
   &::placeholder {
     color: $grey;

@@ -42,11 +42,13 @@
           <ul class="main-navigation__user-list">
             <li class="main-navigation__user-item">
               <a class="main-navigation__user-link main-navigation__user-link--user" href="#">
+                <span class="main-navigation__user-image main-navigation__user-image--user"></span>
                 <span class="main-navigation__user-text">Войти</span>
               </a>
             </li>
             <li class="main-navigation__user-item">
               <a class="main-navigation__user-link main-navigation__user-link--cart" href="#">
+                <span class="main-navigation__user-image main-navigation__user-image--cart"></span>
                 <span class="main-navigation__user-text">Корзина</span>
               </a>
             </li>
@@ -267,17 +269,17 @@
 
               <div class="product-form__button-wrapper">
                 <button class="product-form__button button" type="submit">Применить</button>
-                <button class="product-form__button product-form__button--secondary button" type="reset">Сбросить</button>
+                <button class="product-form__button product-form__button--reset button" type="reset">Сбросить</button>
               </div>
             </form>
 
             <div class="catalog__list-wrapper">
               <div class="catalog__sort">
                 <p class="catalog__sort-title">Сортировка:</p>
-                <select class="catalog__select" aria-label="Сортировка">
+                <select class="catalog__select" aria-label="Сортировка" name="sort">
                   <option value="default">по умолчанию</option>
-                  <option value="cheap">по возрастанию</option>
-                  <option value="expensive">по убыванию</option>
+                  <option value="new">новинки</option>
+                  <option value="discount">со скидкой</option>
                 </select>
                 <span class="catalog__select-arrow"></span>
               </div>

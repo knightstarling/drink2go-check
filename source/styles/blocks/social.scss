@@ -9,6 +9,16 @@
 
 .social__item {
   height: 40px;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $secondary;
+  }
+
+  &:active {
+    background-color: rgba(120, 89, 207, 0.25);
+  }
 }
 
 .social__link {
@@ -19,6 +29,11 @@
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: 20px;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $primary-lighter;
+  }
 
   &--vk {
     mask-image: url("../../icons/vk.svg");

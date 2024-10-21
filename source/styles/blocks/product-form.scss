@@ -195,9 +195,20 @@
   @media (min-width: $desktop-width) {
     width: 149px;
   }
+}
 
-  &--secondary {
-    color: $primary;
-    background-color: $white;
+.product-form__button--reset {
+  color: $primary;
+  background-color: $white;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: $white;
+  }
+
+  &:disabled {
+    color: $white;
+    background-color: $light-grey;
   }
 }

@@ -48,6 +48,7 @@
       background-color: $white;
     }
   }
+
   & .main-navigation__button {
     position: absolute;
     top: 0;
@@ -90,6 +91,10 @@
     border-bottom: 1px solid $secondary;
   }
 
+  &:active {
+    background-color: $secondary;
+  }
+
   @media (min-width: $tablet-width) {
     border: 0;
 
@@ -103,9 +108,16 @@
   position: relative;
   display: inline-block;
   padding: 20px 20px;
+  font-weight: 500;
   letter-spacing: 0.3px;
   color: $black;
   text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: $primary;
+  }
+
 
   @media (min-width: $tablet-width) {
     padding: 32px 20px;
@@ -113,6 +125,8 @@
 }
 
 .main-navigation__link--active {
+  color: $primary;
+
   @media (min-width: $tablet-width) {
     &::after {
       content: "";
@@ -151,7 +165,7 @@
 .main-navigation__user-item {
   @media (min-width: $desktop-width) {
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 18px;
     }
 
     &:nth-last-child(2) {
@@ -161,9 +175,21 @@
 }
 
 .main-navigation__user-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
   color: $black;
   text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: $primary;
+  }
+
+  &:active {
+    background-color: $secondary;
+  }
 
   @media (max-width: calc($tablet-width - 1px)) {
     width: 60px;
@@ -175,30 +201,47 @@
     height: 80px;
   }
 
-  @media (min-width: $desktop-width) {
-    padding: 32px 22px 32px 44px;
+  @media (max-width: calc($desktop-width - 1px)) {
+    justify-content: center;
   }
 
-  &--user {
-    background-image: url("../../icons/user.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 16px 16px;
+  @media (min-width: $desktop-width) {
+    padding: 32px 22px;
+  }
+}
 
-    @media (min-width: $desktop-width) {
-      background-position: 20px center;
-    }
+.main-navigation__user-link:hover,
+.main-navigation__user-link:focus-visible {
+  color: $primary;
+
+  & .main-navigation__user-image {
+    background-color: $primary;
+  }
+}
+
+.main-navigation__user-link:active {
+  background-color: $secondary;
+
+  & .main-navigation__user-image {
+    background-color: $primary;
+  }
+}
+
+.main-navigation__user-image {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: $black;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 16px 16px;
+
+  &--user {
+    mask-image: url("../../icons/user.svg");
   }
 
   &--cart {
-    background-image: url("../../icons/cart.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 16px 16px;
-
-    @media (min-width: $desktop-width) {
-      background-position: 20px center;
-    }
+    mask-image: url("../../icons/cart.svg");
   }
 }
 
@@ -213,5 +256,11 @@
 .main-navigation__button {
   @media (min-width: $tablet-width) {
     display: none;
+  }
+}
+
+.main-navigation__button {
+  &:active {
+    background-color: $secondary;
   }
 }

@@ -12,6 +12,8 @@ let Colors;
 let position = 0;
 let stepIndex = 0;
 
+prevButton.disabled = true;
+
 const setBackgroundColors = () => {
   if (width === TABLET_WIDTH) {
     Colors = [
@@ -50,6 +52,13 @@ const nextSlide = () => {
     hero.style.backgroundColor = `${Colors[stepIndex]}`;
   }
 
+  if (stepIndex === slides.length - 1) {
+    nextButton.disabled = true;
+  } else {
+    nextButton.disabled = false;
+    prevButton.disabled = false;
+  }
+
   currentSlide(stepIndex);
 };
 
@@ -67,6 +76,13 @@ const prevSlide = () => {
     hero.style.backgroundImage = `${Colors[stepIndex]}`;
   } else {
     hero.style.backgroundColor = `${Colors[stepIndex]}`;
+  }
+
+  if (stepIndex === 0) {
+    prevButton.disabled = true;
+  } else {
+    prevButton.disabled = false;
+    nextButton.disabled = false;
   }
 
   currentSlide(stepIndex);

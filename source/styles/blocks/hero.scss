@@ -8,6 +8,7 @@
 
 .hero__container {
   position: relative;
+  width: 320px;
   overflow: hidden;
   margin: 0 auto;
 
@@ -174,9 +175,10 @@
   height: 656px;
   background-color: transparent;
   border: none;
-  z-index: 2;
+  z-index: 1;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-image: linear-gradient(to right, $white, rgba(255, 255, 255, 0));
   }
 
@@ -199,6 +201,18 @@
 
   &--next {
     right: 0;
+    transform: rotate(180deg);
+  }
+}
+
+.hero__button:disabled {
+  &:hover,
+  &:focus-visible {
+    background-image: none;
+  }
+
+  &::before {
+    background-image: url("../../icons/arrow-slider-disabled.svg");
   }
 }
 
@@ -209,7 +223,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background-image: url("../../icons/arrow-left.svg");
+  background-image: url("../../icons/arrow-slider.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
@@ -231,7 +245,7 @@
   right: 0;
   width: 20px;
   height: 20px;
-  background-image: url("../../icons/arrow-right.svg");
+  background-image: url("../../icons/arrow-slider.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
